@@ -9,41 +9,42 @@ module.exports = class extends Generator {
     const config = this.config.getAll();
     const modulesPath = config.paths.modules;
     const componentsPath = config.paths.components;
+    const containersPath = config.paths.containers;
     const defaultModule = config.defaultModule;
 
-    // Name of component
+    // Name of container
     this.argument('name', { type: String, required: true });
 
     // Options
-    this.option('stateless', {
-      default: false,
-      desc: 'Generate with stateless structure'
-    });
-
     this.option('module', {
       default: defaultModule,
-      desc: 'Module of component',
+      desc: 'Module of container',
       type: String
     });
 
-    const defaultPath = `${modulesPath}${this.options.module}/${componentsPath}`;
+    const defaultPath = `${modulesPath}${this.options.module}/${containersPath}`;
     this.option('path', {
       default: defaultPath,
-      desc: 'Custom path of component',
+      desc: 'Custom path of container',
+      type: String
+    });
+
+    this.option('componentsPath', {
+      default: componentsPath,
+      desc: 'Custom path of dumb components',
       type: String
     });
   }
 
   writing() {
-    const { path, name } = this.options;
-    const stateless = this.options.stateless;
+    const { name, path, componentsPath } = this.options;
     this.fs.copyTpl(
-      this.templatePath(stateless ? 'statelessComponent.js' : 'component.js'),
+      this.templatePath('container.js'),
       this.destinationPath(`${path}${name}.js`),
-      { name }
+      { name, componentsPath }
     );
     this.fs.copyTpl(
-      this.templatePath('__tests__/component.spec.js'),
+      this.templatePath('__tests__/container.spec.js'),
       this.destinationPath(`${path}__tests__/${name}.spec.js`),
       { name }
     );

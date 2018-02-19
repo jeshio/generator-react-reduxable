@@ -23,23 +23,27 @@ describe('generator-react-reduxable:component', () => {
     assert.file([`${defaultComponentsPath}__tests__/MyComponent.spec.js`]);
   });
 
-  it('created component initialized by class', () => {
+  it('creates component initialized by class', () => {
     assert.fileContent(`${defaultComponentsPath}MyComponent.js`, /extends/);
+  });
+
+  it('creates component by input name', () => {
+    assert.fileContent(`${defaultComponentsPath}MyComponent.js`, 'MyComponent');
   });
 });
 
 describe('generator-react-reduxable:component with options', () => {
-  it('should create stateless component', async () => {
+  it('creates stateless component', async () => {
     await run().withOptions({ stateless: true });
     assert.noFileContent(`${defaultComponentsPath}MyComponent.js`, /extends/);
   });
 
-  it('should generate component by prop path', async () => {
+  it('generates component by prop path', async () => {
     await run().withOptions({ path: 'dir/childDir/' });
     assert.file(['dir/childDir/MyComponent.js']);
   });
 
-  it('should generate component by module', async () => {
+  it('generates component by module', async () => {
     await run().withOptions({ module: 'TestModule' });
 
     assert.file([

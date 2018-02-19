@@ -16,18 +16,24 @@ Second, generate config and setup if you want:
 yo react-reduxable:config
 ```
 
-## How to use
+## How to use (use it in project root)
 
-Generate React + Redux project:
+Generate React + Redux application:
 
 ```bash
 yo react-reduxable
 ```
 
-Generate component (using it from project root):
+Generate component:
 
 ```bash
 yo react-reduxable:component [--stateless, [--path, [--module]]]
+```
+
+Generate container:
+
+```bash
+yo react-reduxable:component [--path, [--module]]
 ```
 
 ## Configuration

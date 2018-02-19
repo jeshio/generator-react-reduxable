@@ -10,7 +10,7 @@ module.exports = class extends Generator {
     this.config.defaults(defaultConfig.defaults());
 
     // Name of component
-    this.argument('name', { type: String, required: true });
+    this.argument('name', { type: String, required: false });
     this.option('not-create-react-app');
   }
 
@@ -45,9 +45,13 @@ module.exports = class extends Generator {
 
   writing() {
     const name = this.props.name || this.options.name;
+    const config = this.config.getAll();
+    const modulesPath = config.paths.modules;
+    const defaultModule = config.defaultModule;
+
     this.fs.copyTpl(
-      this.templatePath('src/modules/Core/constants.js'),
-      this.destinationPath('src/modules/Core/constants.js'),
+      this.templatePath('constants.js'),
+      this.destinationPath(`${modulesPath}${defaultModule}/constants.js`),
       { appName: name }
     );
   }

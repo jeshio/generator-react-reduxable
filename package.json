@@ -1,7 +1,7 @@
 {
   "name": "generator-react-reduxable",
-  "version": "0.0.1",
-  "description": "Create applications with React + Redux based on modules",
+  "version": "0.0.2",
+  "description": "Generator of application and the parts with React + Redux based on modules.",
   "homepage": "",
   "author": {
     "name": "jeshio",
