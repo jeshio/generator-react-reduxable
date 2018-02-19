@@ -2,10 +2,12 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
+const defaultConfig = require('./config');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
+    this.config.defaults(defaultConfig.defaults());
 
     // Name of component
     this.argument('name', { type: String, required: true });
