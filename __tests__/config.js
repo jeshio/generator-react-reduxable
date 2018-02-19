@@ -5,8 +5,7 @@ const helpers = require('yeoman-test');
 
 describe('generator-react-reduxable:config', () => {
   beforeAll(() => {
-    return helpers
-      .run(path.join(__dirname, '../generators/config')));
+    return helpers.run(path.join(__dirname, '../generators/config'));
   });
 
   it('creates config in root', () => {

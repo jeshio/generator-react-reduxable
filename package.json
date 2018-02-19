@@ -82,5 +82,5 @@
     ]
   },
   "repository": "jeshio/generator-react-reduxable",
-  "license": "BSD-2-Clause-FreeBSD"
+  "license": "MIT"
 }

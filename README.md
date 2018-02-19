@@ -1,5 +1,5 @@
 # generator-react-reduxable [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Create application with React + Redux based on modules.
+> Generate application and parts with React + Redux based on modules.
 
 ## Installation
 
@@ -10,6 +10,12 @@ npm install -g yo
 npm install -g generator-react-reduxable
 ```
 
+Second, generate config and setup if you want:
+
+```bash
+yo react-reduxable:config
+```
+
 ## How to use
 
 Generate React + Redux project:
@@ -17,12 +23,6 @@ Generate React + Redux project:
 ```bash
 yo react-reduxable
 ```
-
-If you will not want to generate full app, you can generate config and setup it:
-
-```bash
-yo react-reduxable:config
-``` 
 
 Generate component (using it from project root):
 
@@ -32,7 +32,7 @@ yo react-reduxable:component [--stateless, [--path, [--module]]]
 
 ## Configuration
 
-You can set configuration in `.yo-rc.json` (generate it if it's not exists).
+You can set configuration in `.yo-rc.json` (generate it if isn't exists).
 
 ```
 generator-react-reduxable
