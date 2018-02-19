@@ -2,7 +2,7 @@
 const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
-const config = require('../generators/app/config').defaults();
+const config = require('../generators/config/config').defaults();
 const defaultModulePath = `${config.paths.modules}${config.defaultModule}/`;
 
 describe('generator-react-reduxable:app', () => {
@@ -19,13 +19,5 @@ describe('generator-react-reduxable:app', () => {
 
   it('should create .yo-rc config', () => {
     assert.file(['.yo-rc.json']);
-  });
-
-  it('should add default values to .yo-rc', () => {
-    assert.fileContent('.yo-rc.json', 'paths');
-    assert.fileContent('.yo-rc.json', 'modules');
-    assert.fileContent('.yo-rc.json', 'components');
-    assert.fileContent('.yo-rc.json', 'store');
-    assert.fileContent('.yo-rc.json', 'defaultModule');
   });
 });

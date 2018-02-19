@@ -1,6 +1,6 @@
 'use strict';
 const Generator = require('yeoman-generator');
-const defaultConfig = require('../app/config');
+const defaultConfig = require('../config/config');
 
 module.exports = class extends Generator {
   constructor(args, opts) {

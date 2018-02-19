@@ -18,10 +18,30 @@ Generate React + Redux project:
 yo react-reduxable
 ```
 
-Generate component:
+If you will not want to generate full app, you can generate config and setup it:
 
 ```bash
-yo react-reduxable:component [--stateless]
+yo react-reduxable:config
+``` 
+
+Generate component (using it from project root):
+
+```bash
+yo react-reduxable:component [--stateless, [--path, [--module]]]
+```
+
+## Configuration
+
+You can set configuration in `.yo-rc.json` (generate it if it's not exists).
+
+```
+generator-react-reduxable
+--paths           # where you
+  --modules       # (root relative)
+  --components    # dumb components (module relative)
+  --containers    # (module relative)
+  --store         # (module relative)
+--defaultModule   # default module for generated elements
 ```
 
 [npm-image]: https://badge.fury.io/js/generator-react-reduxable.svg

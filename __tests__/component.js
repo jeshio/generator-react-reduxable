@@ -2,7 +2,7 @@
 const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
-const config = require('../generators/app/config').defaults();
+const config = require('../generators/config/config').defaults();
 const defaultComponentsPath = `${config.paths.modules}${config.defaultModule}/${
   config.paths.components
 }`;
